@@ -8,13 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Проверка кода из репозитория
+    - name: Check out repository code
       uses: actions/checkout@v4
 
-    - name: Настройка Docker Buildx
+    - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
 
-    - name: Сборка Docker-образа в облаке GitHub
+    - name: Build Docker image in cloud
       run: |
         docker build -t test-blazor-app:latest .
         echo "Контейнеризация прошла успешно!"
